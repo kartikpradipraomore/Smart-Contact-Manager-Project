@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <section id="content"  class="mt-28" >
+        <div class="grid grid-cols-12">
+            <div class="col-span-4 md:col-span-2 lg:col-span-3 xl:col-span-4"></div>
+    
+            <div class="col-span-12 md:col-span-8 lg:col-span-6 xl:col-span-4">
+              <!-- Taking 6 grid Space -->
+    
+              <div
+                class="block mb-4 p-6 bg-gray-200 border-t-[10px] border-b-[10px] dark:border-b-[10px] dark:border-t-[10px] border-green-700 dark:border-green-700 rounded-lg shadow-lg dark:bg-gray-800 ">
+                <h5
+                  class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+    
+                  Login Here
+                </h5>
+                <!-- <p class=" text-center font-normal text-gray-400 dark:text-gray-400">
+                  Starts managing Contact On Cloud...
+                </p> -->
+    
+                <!-- Message here -->
+                <div class="text-red-500 mt-1 text-center" th:if="${param.error}">  Invalid username or password. </div>
+                <div class="text-green-500 mt-1 text-center" th:if="${param.exit}"> You have been logged out. </div>
+
+    
+                <!-- Form -->
+    
+                <form  method="post" th:action="@{/authenticate}" class="mt-4">
+                
+
+                  <!-- Email -->
+                  <div class="mb-2">
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Your UserName</label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Enter Email"
+                      required
+                    />
+                    <!-- <p 
+                    data-th-fields="${#fields.hasErrors('email')}"
+                    data-th-errors="*{email}"
+                    class="text-red-500 py-1  px-1"></p> -->
+                  </div>
+    
+                  <!-- Password -->
+                  <div class="mb-5">
+                    <label
+                      for="password"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >New Password</label
+                    >
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Enter Password"
+                      required
+                    />
+                    <!-- <p 
+                    data-th-fields="${#fields.hasErrors('password')}"
+                    data-th-errors="*{password}"
+                    class="text-red-500 py-1  px-1"></p> -->
+                  </div>
+                  <!-- Phone -->
+                 
+                  <!-- bottons -->
+                   <div class="mb-3 flex justify-center space-x-3">
+                    <button type="submit" class="px-3 py-2 bg-blue-700 text-white rounded hover:bg-green-700">Login</button>
+                    <button type="reset" class="px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500">Reset</button>
+                   </div>
+                </form>
+
+                <div class="sicial-btn-container flex justify-center mt-6">
+                  <a class=" py-4 px-3 login-with-google-btn" data-th-href="@{'/oauth2/authorization/google'}">Login With Google</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <script></script>
+    
+</body>
+</html>

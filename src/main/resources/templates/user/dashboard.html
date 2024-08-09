@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}">
+  <head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div id="content">
+      <!-- Sidebar -->
+      <div th:if="${user}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+
+
+
+      <!-- Main Content -->
+      <div class="sm:pl-64 pt-20 bg-pink-500">
+        <h1 class="text-5xl">Dashboard Page</h1>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>
