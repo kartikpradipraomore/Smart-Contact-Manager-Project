@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}">
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +10,6 @@
   </head>
   <body>
     <section id="content" class="mt-[90px]">
-        
       <div class="grid grid-cols-12">
         <div class="col-span-4 md:col-span-2 lg:col-span-3 xl:col-span-4"></div>
 
@@ -15,11 +17,11 @@
           <!-- Taking 6 grid Space -->
 
           <div
-            class="block mb-4 p-6 bg-white border-t-[10px] border-b-[10px] dark:border-b-[10px] dark:border-t-[10px] border-blue-700 dark:border-blue-700 rounded-lg shadow-lg dark:bg-gray-800 ">
+            class="block mb-4 p-6 bg-white border-t-[10px] border-b-[10px] dark:border-b-[10px] dark:border-t-[10px] border-blue-700 dark:border-blue-700 rounded-lg shadow-lg dark:bg-gray-800"
+          >
             <h5
               class="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
-
               SignUp Here
             </h5>
             <p class="text-center font-normal text-gray-400 dark:text-gray-400">
@@ -31,8 +33,13 @@
 
             <!-- Form -->
 
-            <form novalidate th:action="@{'/do-register'}" data-th-object="${userForm}" method="post" class="mt-4">
-                
+            <form
+              novalidate
+              th:action="@{'/do-register'}"
+              data-th-object="${userForm}"
+              method="post"
+              class="mt-4"
+            >
               <!-- Name -->
               <div class="mb-3">
                 <label
@@ -48,10 +55,11 @@
                   placeholder="Enter Name"
                   required
                 />
-                <p 
-                data-th-fields="${#fields.hasErrors('name')}"
-                data-th-errors="*{name}"
-                class="text-red-500 py-1  px-1"></p>
+                <p
+                  data-th-fields="${#fields.hasErrors('name')}"
+                  data-th-errors="*{name}"
+                  class="text-red-500 py-1 px-1"
+                ></p>
               </div>
 
               <!-- Email -->
@@ -69,10 +77,11 @@
                   placeholder="Enter Email"
                   required
                 />
-                <p 
-                data-th-fields="${#fields.hasErrors('email')}"
-                data-th-errors="*{email}"
-                class="text-red-500 py-1  px-1"></p>
+                <p
+                  data-th-fields="${#fields.hasErrors('email')}"
+                  data-th-errors="*{email}"
+                  class="text-red-500 py-1 px-1"
+                ></p>
               </div>
 
               <!-- Password -->
@@ -90,10 +99,11 @@
                   placeholder="Enter Password"
                   required
                 />
-                <p 
-                data-th-fields="${#fields.hasErrors('password')}"
-                data-th-errors="*{password}"
-                class="text-red-500 py-1  px-1"></p>
+                <p
+                  data-th-fields="${#fields.hasErrors('password')}"
+                  data-th-errors="*{password}"
+                  class="text-red-500 py-1 px-1"
+                ></p>
               </div>
               <!-- Phone -->
 
@@ -111,10 +121,11 @@
                   placeholder="Enter Phone"
                   required
                 />
-                <p 
-                data-th-fields="${#fields.hasErrors('phoneNumber')}"
-                data-th-errors="*{phoneNumber}"
-                class="text-red-500 py-1  px-1"></p>
+                <p
+                  data-th-fields="${#fields.hasErrors('phoneNumber')}"
+                  data-th-errors="*{phoneNumber}"
+                  class="text-red-500 py-1 px-1"
+                ></p>
               </div>
               <!-- About  -->
               <div class="mb-3">
@@ -130,23 +141,50 @@
                   class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write here..."
                 ></textarea>
-                <p 
-                data-th-fields="${#fields.hasErrors('about')}"
-                data-th-errors="*{about}"
-                class="text-red-500 py-1  px-1"></p>
+                <p
+                  data-th-fields="${#fields.hasErrors('about')}"
+                  data-th-errors="*{about}"
+                  class="text-red-500 py-1 px-1"
+                ></p>
               </div>
               <!-- bottons -->
-               <div class="mb-3 flex justify-center space-x-3">
-                <button type="submit" class="px-3 py-2 bg-blue-700 text-white rounded hover:bg-blue-500">SignUp</button>
-                <button type="reset" class="px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500">Reset</button>
-               </div>
-                <div class="sicial-btn-container flex justify-center mt-6 ">
-                  <a class=" py-4 px-3 login-with-google-btn" data-th-href="@{'/oauth2/authorization/google'}">SignUp With Google</a>
-                </div>
+              <div class="mb-3 flex justify-center space-x-3">
+                <button
+                  type="submit"
+                  class="px-3 py-2 bg-blue-700 text-white rounded hover:bg-blue-500"
+                >
+                  SignUp
+                </button>
+                <button
+                  type="reset"
+                  class="px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500"
+                >
+                  Reset
+                </button>
+              </div>
+
+              <!-- Already Have Acount Button -->
+              <div class="mb-3 flex justify-center">
+                <span>Already Have Account?</span>
+                <a data-th-href="@{'/login'}"
+                  ><span class="text-blue-600">&nbsp;Login.</span></a
+                >
+              </div>
+
+              <!-- Signup With Google Button -->
+              <div class="sicial-btn-container flex justify-center mt-6">
+                <a
+                  class="py-4 px-3 login-with-google-btn"
+                  data-th-href="@{'/oauth2/authorization/google'}"
+                  >SignUp With Google</a
+                >
+              </div>
+              
             </form>
           </div>
         </div>
       </div>
     </section>
+    <script></script>
   </body>
 </html>
