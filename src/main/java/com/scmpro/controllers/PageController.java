@@ -7,6 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.scmpro.entities.Call;
 import com.scmpro.entities.User;
 import com.scmpro.forms.UserForm;
 import com.scmpro.helper.Message;
@@ -46,7 +48,9 @@ public class PageController {
 
     // contact
     @GetMapping("/contact")
-    public String getContact() {
+    public String getContact(Model model) {
+        Call call = new Call();
+        model.addAttribute("call", call);
         return "contact";
     }
 

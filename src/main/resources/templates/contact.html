@@ -23,17 +23,19 @@
               Contact Me
             </h1>
 
-            <form class="py-5">
-              <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+             <!-- Message here -->
+            <div th:replace="~{ message :: messagebox}"></div>
+
+            <form novalidate class="py-5" data-th-action="@{'/addcall'}" method="post" data-th-object="${call}">
+              <!-- <div class="grid md:grid-cols-2 md:gap-6 mt-3"> -->
                 <!-- First Name -->
-                <div class="relative z-0 w-full mb-5 group">
+                <div class="relative z-0 w-full mb-2 group">
                   <input
                     type="text"
-                    name="floating_first_name"
+                    data-th-field="*{firstName}"
                     id="floating_first_name"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
-                    required
                   />
                   <label
                     for="floating_first_name"
@@ -41,11 +43,17 @@
                     >First name</label
                   >
                 </div>
+                <p
+                  data-th-fields="${#fields.hasErrors('firstName')}"
+                  data-th-errors="*{firstName}"
+                  class="text-red-500 px-1 mb-5"
+                ></p>
+                <div class="mb-6 mt-2"></div>
                 <!-- Last Name -->
-                <div class="relative z-0 w-full mb-5 group">
+                <div class="relative z-0 w-full mb-2 group">
                   <input
                     type="text"
-                    name="floating_last_name"
+                    data-th-field="*{lastName}"
                     id="floating_last_name"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
@@ -57,14 +65,20 @@
                     >Last name</label
                   >
                 </div>
-              </div>
+                <p
+                  data-th-fields="${#fields.hasErrors('lastName')}"
+                  data-th-errors="*{lastName}"
+                  class="text-red-500 px-1 mb-5"
+                ></p>
+                <div class="mb-6 mt-2"></div>
+              <!-- </div> -->
 
               <!-- Email Field -->
-              <div class="relative z-0 w-full mb-5 group">
+              <div class="relative z-0 w-full mb-2 group">
                 <input
                   type="email"
-                  name="floating_email"
                   id="floating_email"
+                  data-th-field="*{email}"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                   required
@@ -75,14 +89,21 @@
                   >Email address</label
                 >
               </div>
+              <p
+                  data-th-fields="${#fields.hasErrors('email')}"
+                  data-th-errors="*{email}"
+                  class="text-red-500 px-1 mb-5"
+                ></p>
+                <div class="mb-6 mt-2"></div>
 
               <!-- Phone Field -->
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
+              <!-- <div class="grid md:grid-cols-2 md:gap-6"> -->
+
+                <div class="relative z-0 w-full mb-2 group">
                   <input
                     type="tel"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    name="floating_phone"
+                    data-th-field="*{phoneNumber}"
                     id="floating_phone"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
@@ -94,12 +115,18 @@
                     >Phone number (123-456-7890)</label
                   >
                 </div>
+                <p
+                  data-th-fields="${#fields.hasErrors('phoneNumber')}"
+                  data-th-errors="*{phoneNumber}"
+                  class="text-red-500 px-1 mb-5"
+                ></p>
+                <div class="mb-6 mt-2"></div>
 
                 <!-- Profe -->
-                <div class="relative z-0 w-full mb-5 group">
+                <div class="relative z-0 w-full mb-2 group">
                   <input
                     type="text"
-                    name="floating_company"
+                    data-th-field="*{profession}"
                     id="floating_company"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
@@ -111,8 +138,14 @@
                     >Profession (Ex.Employee,Student.)</label
                   >
                 </div>
+                <p
+                  data-th-fields="${#fields.hasErrors('profession')}"
+                  data-th-errors="*{profession}"
+                  class="text-red-500 px-1 mb-5"
+                ></p>
+                <div class="mb-6 mt-2"></div>
 
-                <div class="relative z-0 w-full mb-5 group">
+                <div class="relative z-0 w-full mb-2 group">
                   <label
                     for="message"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -120,13 +153,20 @@
                   >
                   <textarea
                     id="message"
+                    data-th-field="*{message}"
                     rows="4"
                     cols=""
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder="Write your message here..."
                   ></textarea>
                 </div>
-              </div>
+                <p
+                  data-th-fields="${#fields.hasErrors('message')}"
+                  data-th-errors="*{message}"
+                  class="text-red-500 px-1 mb-5"
+                ></p>
+                <div class="mb-6 mt-2"></div>
+              <!-- </div> -->
 
               <!-- Button -->
               <div class="text-center mt-3">
@@ -136,6 +176,8 @@
                 >
                   Submit
                 </button>
+
+
               </div>
             </form>
 
@@ -155,28 +197,28 @@
                 <a data-th-href="@{'https://www.instagram.com/kartikpmore/'}" target="_blank">
                 <div class="Instagram text-center mt-2 hover:scale-110 transition-all duration-100">
                   <i class="fa-brands fa-instagram text-3xl text-red-400"></i>
-                  <p class=" text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Instagram</p>
+                  <p class=" text-black dark:text-gray-300 dark:hover:text-gray-50 cursor-pointer font-bold">Instagram</p>
                 </div>
                 </a>
 
                 <a data-th-href="@{https://github.com/kartikpradipraomore}" target="_blank">
                 <div class="Github text-center mt-2 hover:scale-110 transition-all duration-100">
                  <i class="fa-brands fa-github text-3xl text-red-400"></i></i>
-                  <p class="text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Github</p>
+                  <p class=" text-black dark:text-gray-300 dark:hover:text-gray-50 cursor-pointer font-bold">Github</p>
                 </div>
                 </a>
 
                 <a href="" target="_blank">
                  <div class="Facebook text-center mt-2 hover:scale-110 transition-all duration-100">
                  <i class="fa-brands fa-facebook text-3xl text-red-400"></i>
-                  <p class="text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Facebook</p>
+                  <p class="text-black dark:text-gray-300 dark:hover:text-gray-50 cursor-pointer font-bold">Facebook</p>
                 </div>
                 </a>
 
                 <a data-th-href="@{https://leetcode.com/u/kartikmore441/}" target="_blank">
                  <div class="Leetcode text-center mt-2 hover:scale-110 transition-all duration-100">
                   <i class="fa-solid fa-code text-3xl text-red-400"></i></i>
-                  <p class="text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Leetcode</p>
+                  <p class="text-black dark:text-gray-300  dark:hover:text-gray-50 cursor-pointer font-bold">Leetcode</p>
                 </div>
                </a>
 
