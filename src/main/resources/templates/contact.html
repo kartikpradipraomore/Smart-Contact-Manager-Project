@@ -1,19 +1,192 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-</head>
-<body>
+  </head>
+  <body>
+    <section id="content" class="mt-28">
+      <div class="grid grid-cols-12">
+        <div class="col-span-4 md:col-span-2 lg:col-span-3 xl:col-span-4"></div>
 
-    <section id="content" >
-        <h1>Contact Page</h1>
-        
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deleniti voluptatem, veritatis eveniet corrupti debitis atque assumenda. Possimus eligendi dolor pariatur, amet maiores vero eius ullam et perferendis quos itaque!</p>
-      </section>
+        <div class="col-span-12 md:col-span-8 lg:col-span-6 xl:col-span-4">
+          <div
+            class="block mb-4 p-6 bg-gray-200 border-t-[10px] border-b-[10px] dark:border-b-[10px] dark:border-t-[10px] border-blue-700 dark:border-green-700 rounded-lg shadow-lg dark:bg-gray-800"
+          >
+            <h1
+              class="mb-4 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              Contact Me
+            </h1>
 
-      <script></script>
-    
-</body>
+            <form class="py-5">
+              <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+                <!-- First Name -->
+                <div class="relative z-0 w-full mb-5 group">
+                  <input
+                    type="text"
+                    name="floating_first_name"
+                    id="floating_first_name"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="floating_first_name"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >First name</label
+                  >
+                </div>
+                <!-- Last Name -->
+                <div class="relative z-0 w-full mb-5 group">
+                  <input
+                    type="text"
+                    name="floating_last_name"
+                    id="floating_last_name"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="floating_last_name"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Last name</label
+                  >
+                </div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="relative z-0 w-full mb-5 group">
+                <input
+                  type="email"
+                  name="floating_email"
+                  id="floating_email"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  for="floating_email"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Email address</label
+                >
+              </div>
+
+              <!-- Phone Field -->
+              <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                  <input
+                    type="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    name="floating_phone"
+                    id="floating_phone"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="floating_phone"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Phone number (123-456-7890)</label
+                  >
+                </div>
+
+                <!-- Profe -->
+                <div class="relative z-0 w-full mb-5 group">
+                  <input
+                    type="text"
+                    name="floating_company"
+                    id="floating_company"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="floating_company"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Profession (Ex.Employee,Student.)</label
+                  >
+                </div>
+
+                <div class="relative z-0 w-full mb-5 group">
+                  <label
+                    for="message"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Your message For Me</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    cols=""
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder="Write your message here..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="text-center mt-3">
+                <button
+                  type="submit"
+                  class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+
+            <div class="text-center relative z-0 w-full mb-5 group mt-7">
+              OR
+            </div>
+
+            <div class="Contact_By_Social relative z-0 w-full mb-5 group mt-6">
+              <h1
+                class="mb-2 text-center font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Contact By Social Media Account
+              </h1>
+
+              <div class=" flex flex-col md:flex-row lg:flex-row gap-3 justify-center py-3">
+
+                <a data-th-href="@{'https://www.instagram.com/kartikpmore/'}" target="_blank">
+                <div class="Instagram text-center mt-2 hover:scale-110 transition-all duration-100">
+                  <i class="fa-brands fa-instagram text-3xl text-red-400"></i>
+                  <p class=" text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Instagram</p>
+                </div>
+                </a>
+
+                <a data-th-href="@{https://github.com/kartikpradipraomore}" target="_blank">
+                <div class="Github text-center mt-2 hover:scale-110 transition-all duration-100">
+                 <i class="fa-brands fa-github text-3xl text-red-400"></i></i>
+                  <p class="text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Github</p>
+                </div>
+                </a>
+
+                <a href="" target="_blank">
+                 <div class="Facebook text-center mt-2 hover:scale-110 transition-all duration-100">
+                 <i class="fa-brands fa-facebook text-3xl text-red-400"></i>
+                  <p class="text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Facebook</p>
+                </div>
+                </a>
+
+                <a data-th-href="@{https://leetcode.com/u/kartikmore441/}" target="_blank">
+                 <div class="Leetcode text-center mt-2 hover:scale-110 transition-all duration-100">
+                  <i class="fa-solid fa-code text-3xl text-red-400"></i></i>
+                  <p class="text-gray-300 hover:text-gray-50 cursor-pointer font-bold">Leetcode</p>
+                </div>
+               </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script></script>
+  </body>
 </html>
