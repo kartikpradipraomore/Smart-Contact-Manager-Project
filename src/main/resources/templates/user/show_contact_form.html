@@ -61,6 +61,13 @@
                       placeholder="Enter Name"
                     />
                   </div>
+                   <p
+                    class="text-red-500"
+                    data-th-if="${#fields.hasErrors('name')}"
+                    data-th-errors="*{name}"
+                  >
+                    Invalid Name
+                  </p>
                 </div>
 
                 <!-- Contact Email -->

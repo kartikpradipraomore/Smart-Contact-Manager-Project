@@ -125,8 +125,6 @@ public class ContactController {
             Model model,
             Authentication authentication) {
 
-       
-
         var user = userService.getUserByEmail(EmailHelper.getEmailOfLogedUser(authentication));
 
         Page<Contact> pageContact = null;
@@ -141,8 +139,6 @@ public class ContactController {
                     direction, user);
         }
 
-        
-
         model.addAttribute("contactSearchForm", contactSearchForm);
 
         model.addAttribute("pageContact", pageContact);
@@ -152,14 +148,12 @@ public class ContactController {
         return "/user/search";
     }
 
-
-     // detete contact
+    // detete contact
     @RequestMapping("/delete/{contactId}")
     public String deleteContact(
             @PathVariable("contactId") String contactId,
             HttpSession session) {
         contactService.deletecontact(contactId);
-       
 
         session.setAttribute("message",
                 Message.builder()
@@ -172,7 +166,7 @@ public class ContactController {
         return "redirect:/user/contacts/all";
     }
 
-     // update contact form view
+    // update contact form view
     @GetMapping("/view/{contactId}")
     public String updateContactFormView(
             @PathVariable("contactId") String contactId,
@@ -187,20 +181,23 @@ public class ContactController {
         contactForm.setDescription(contact.getDescription());
         contactForm.setFavorite(contact.isFavorite());
         contactForm.setWebsiteLink(contact.getWebsiteLink());
-        // contactForm.setWebsiteLink(contact.getLinkedInLink());
-        // contactForm.set(contact.getPicture());
+        contactForm.setWebsiteLink(contact.getLinkedInLink());
+        // contactForm.setContactImage(contact.getPicture());
 
         model.addAttribute("contactForm", contactForm);
         model.addAttribute("contactId", contactId);
 
         return "user/update_contact_view";
     }
-    
-     @RequestMapping(value = "/update/{contactId}", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/update/{contactId}", method = RequestMethod.POST)
     public String updateContact(@PathVariable("contactId") String contactId,
             @Valid @ModelAttribute ContactForm contactForm,
             BindingResult bindingResult,
-            Model model) {
+            Model model,
+            HttpSession session) {
+
+        System.out.println(contactForm);
 
         // update the contact
         if (bindingResult.hasErrors()) {
@@ -218,6 +215,8 @@ public class ContactController {
         con.setWebsiteLink(contactForm.getWebsiteLink());
         con.setLinkedInLink(contactForm.getLinkedinLink());
 
+        System.out.println(con);
+
         // process image:
 
         if (contactForm.getContactImage() != null && !contactForm.getContactImage().isEmpty()) {
@@ -228,10 +227,14 @@ public class ContactController {
             // contactForm.setContactImage(imageUrl)
 
         } else {
-             System.out.println("empty");
+            System.out.println("empty");
         }
 
-        model.addAttribute("message", Message.builder().content("Contact Updated !!").type(MessageType.green).build());
+        contactService.update(con);
+
+        // Giving Message to View
+        Message message = Message.builder().content("Contact Updated SuccessFully!!").type(MessageType.green).build();
+        session.setAttribute("message", message);
 
         return "redirect:/user/contacts/view/" + contactId;
     }

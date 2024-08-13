@@ -3,7 +3,7 @@
   data-th-object="${session.message}"
   data-th-fragment="messagebox"
   data-th-classappend="*{'text-'+type+'-800 rounded-lg shadow-lg bg-'+type+'-50 dark:bg-gray-800 dark:text-'+type+'-400'}"
-  class="flex items-center p-4 mb-4 text-sm"
+  class="flex items-center p-4 mb-2 mt-4 text-sm text-center"
   role="alert"
 >
   <svg
@@ -18,8 +18,8 @@
     />
   </svg>
   <span class="sr-only">Info</span>
-  <div>
-     <span data-th-text="*{content}"></span>
+  <div >
+     <span class="text-center"  data-th-text="*{content}"></span>
   </div>
   <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
 </div>
