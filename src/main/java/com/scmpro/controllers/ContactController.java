@@ -1,8 +1,8 @@
 package com.scmpro.controllers;
 
-import java.util.List;
 import java.util.UUID;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.Authentication;
@@ -37,6 +37,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/user/contacts")
 public class ContactController {
 
+    private Logger logger = org.slf4j.LoggerFactory.getLogger(ContactController.class);
+
     @Autowired
     private ContactService contactService;
 
@@ -45,8 +47,6 @@ public class ContactController {
 
     @Autowired
     private ImageService imageService;
-
-    private List<Contact> contactsByUser;
 
     // Add Contact view
     @RequestMapping("/add")
@@ -57,7 +57,7 @@ public class ContactController {
     }
 
     @PostMapping("/add")
-    public String addContact(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult ,
+    public String addContact(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult,
             Authentication authentication) {
 
         // Validate Form
@@ -71,10 +71,10 @@ public class ContactController {
         // Genrating Random FileName
         String fileName = UUID.randomUUID().toString();
 
-        // Fetting File Url
+        // Fetting File Url....
         String fileUrl = imageService.uploadImage(contactForm.getContactImage(), fileName);
 
-        // Convert ContactForm ==> Contact
+        // Convert ContactForm ==> Contact......
         Contact contact = new Contact();
         contact.setName(contactForm.getName());
         contact.setFavorite(contactForm.isFavorite());
@@ -95,7 +95,7 @@ public class ContactController {
         return "redirect:/user/contacts/add";
     }
 
-    // view Contact
+    // view Contact............
     @RequestMapping("/all")
     public String viewContacts(
             @RequestParam(value = "page", defaultValue = "0") int page,
@@ -116,6 +116,8 @@ public class ContactController {
 
     }
 
+    // search handler
+
     @RequestMapping("/search")
     public String searchHandler(
 
@@ -126,6 +128,8 @@ public class ContactController {
             @RequestParam(value = "direction", defaultValue = "asc") String direction,
             Model model,
             Authentication authentication) {
+
+        logger.info("field {} keyword {}", contactSearchForm.getField(), contactSearchForm.getValue());
 
         var user = userService.getUserByEmail(EmailHelper.getEmailOfLogedUser(authentication));
 
@@ -141,14 +145,20 @@ public class ContactController {
                     direction, user);
         }
 
+        logger.info("pageContact {}", pageContact);
+
         model.addAttribute("contactSearchForm", contactSearchForm);
 
         model.addAttribute("pageContact", pageContact);
 
         model.addAttribute("pageSize", AppConstant.PAGE_SIZE);
 
-        return "/user/search";
+        return "user/search";
     }
+
+
+
+
 
     // detete contact
     @RequestMapping("/delete/{contactId}")
@@ -242,3 +252,10 @@ public class ContactController {
     }
 
 }
+
+
+
+
+
+
+

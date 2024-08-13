@@ -9,6 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:replace="${title}"></title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
       rel="stylesheet"
@@ -22,6 +23,7 @@
     />
     <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
     <link rel="stylesheet" data-th-href="@{'/css/style.css'}" />
+
   </head>
 
   <body class="dark:bg-gray-900 bg-gray-200 dark:text-white">
@@ -46,9 +48,11 @@
 
     <!-- ===================================================================================================== -->
 
+   
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script th:src="@{'/js/script.js'}"></script>
     <script data-th-replace="${script}"></script>
+    
   </body>
 </html>
