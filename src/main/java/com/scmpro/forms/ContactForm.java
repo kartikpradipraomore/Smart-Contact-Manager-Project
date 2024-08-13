@@ -1,9 +1,11 @@
 package com.scmpro.forms;
 
-
 import org.springframework.web.multipart.MultipartFile;
 
 import com.scmpro.validators.ValidFile;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Getter
@@ -14,16 +16,17 @@ import lombok.*;
 @Builder
 public class ContactForm {
 
-
-   
+    @NotBlank(message = "Name Is Required")
     private String name;
 
-   
+    @Email
+    @NotBlank(message = "Email Is Required")
     private String email;
 
-   
+    @NotBlank(message = "Phone Number Is Required")
     private String phoneNumber;
 
+    @NotBlank(message = "Address Is Required")
     private String address;
 
     private String description;
@@ -31,8 +34,7 @@ public class ContactForm {
     private String websiteLink;
     private String linkedinLink;
 
-    @ ValidFile
+    @ValidFile
     private MultipartFile contactImage;
-
 
 }

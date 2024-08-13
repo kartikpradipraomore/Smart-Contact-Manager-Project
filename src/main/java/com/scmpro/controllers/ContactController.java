@@ -57,10 +57,12 @@ public class ContactController {
     }
 
     @PostMapping("/add")
-    public String addContact(@ModelAttribute ContactForm contactForm,
+    public String addContact(@Valid @ModelAttribute ContactForm contactForm, BindingResult bindingResult ,
             Authentication authentication) {
 
         // Validate Form
+        if (bindingResult.hasErrors())
+            return "user/show_contact_form";
 
         // Getting username
         String username = EmailHelper.getEmailOfLogedUser(authentication);
