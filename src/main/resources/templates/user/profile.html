@@ -7,6 +7,7 @@
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
+    
   </head>
   <body>
     <div id="content">
@@ -25,13 +26,13 @@
         <div
          
           id="default-carousel"
-          class="relative w-full bg-slate-100 h-[700px] "
+          class="relative w-full rounded-xl  animate-color-change h-[700px] "
           data-carousel="slide"
         >
           <!-- Carousel wrapper -->
           <div  data-th-object="${user}" class=" mt-11 gap-10 relative h-full overflow-hidden rounded-lg md:h-[700px]">
             <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out rounded-lg pt-20 md:mt-20 md:mb-20 md:mr-24  md:ml-24 bg-red-400"  data-carousel-item>
+            <div class="hidden duration-700 ease-in-out rounded-lg pt-20 md:mt-20 md:mb-20 md:mr-24  md:ml-24 "  data-carousel-item>
 
               <div class="flex items-center flex-col">
 
