@@ -10,199 +10,180 @@
   </head>
   <body>
     <section id="content" class="mt-28">
-
-      <div class="service-container text-center py-8  flex flex-col md:flex-row gap-1">
-
-        <div
-        class=" w-full md:max-w-md lg:max-w-sm mr-3 ml-3 bg-gray-400  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-      >
-        <a data-th-href="@{'/signup'}">
-          <img
-            class="rounded-t-lg"
-           data-th-src="@{'/images/image-C.jpg'}"
-            alt=""
-          />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      <!-- Services Section -->
+      <section class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Cloudinary"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
+              We Save Your Contacts On Cloud...
+            </h3>
+            <p class="text-white dark:text-white">
+              The system securely saves all your contact information on the
+              cloud, ensuring that your data is accessible anytime, anywhere.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
             >
-              We Save Your Contacts On Cloud......
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-           The system securely saves all your contact information on the cloud, ensuring that your data is accessible anytime, anywhere. This feature not only provides convenience but also ensures that your contacts are backed up and protected against data loss.
-          </p>
-          <a
-            data-th-href="@{'/signup'}"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Try Now
-            <!-- <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            > -->
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
-        </div>       
-      </div>
-
-    
-    
-      <div
-        class="w-full md:max-w-md lg:max-w-sm  ml-3 mr-3 bg-gray-400  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-      >
-        <a data-th-href="@{'/signup'}">
-          <img
-            class="rounded-t-lg"
-           data-th-src="@{'/images/image-G.jpeg'}"
-            alt=""
-          />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-            >
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Google Authentication"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
               Signup With Google In Easy Way
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Users can sign in using their Google accounts, streamlining the authentication process and enhancing user convenience.
-          </p>
-          <a
-            data-th-href="@{'/signup'}"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Try Now
-            <!-- <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            > -->
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
-        </div>       
-      </div>
-
-      <div
-        class=" w-full md:max-w-md lg:max-w-sm  ml-3 mr-3 bg-gray-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-      >
-        <a data-th-href="@{'/signup'}">
-          <img
-            class="rounded-t-lg"
-           data-th-src="@{'/images/image-S.jpg'}"
-            alt=""
-          />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            </h3>
+            <p class="text-white dark:text-white">
+              Users can sign in using their Google accounts, streamlining the
+              authentication process and enhancing user convenience.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
             >
-              Search your Contacts By Your Friend Name...
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-           The system allows users to search for contacts by name, email, or phone number, making it easy to find specific contacts quickly.
-          </p>
-          <a
-            data-th-href="@{'/signup'}"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Try Now
-            <!-- <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            > -->
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
-        </div>       
-      </div>
-
-
-       <div
-        class=" w-full md:max-w-md lg:max-w-sm  ml-3 mr-3 bg-gray-400  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-      >
-        <a data-th-href="@{'/signup'}">
-          <img
-            class="rounded-t-lg"
-           data-th-src="@{'/images/image-SE.jpg'}"
-            alt=""
-          />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Search Contacts"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
+              Search Your Contacts By Name...
+            </h3>
+            <p class="text-white dark:text-white">
+              The system allows users to search for contacts by name, email, or
+              phone number, making it easy to find specific contacts quickly.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
             >
+          </div>
+          <!-- Feature 4 -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Security"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
               Security
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            The application is built with strong security measures, ensuring that user data, including contact information, is protected from unauthorized access.
-          </p>
-          <a
-            data-th-href="@{'/signup'}"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Try Now
-            <!-- <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            > -->
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
-        </div>       
-      </div>
+            </h3>
+            <p class="text-white dark:text-white">
+              The application is built with strong security measures, ensuring
+              that user data, including contact information, is protected from
+              unauthorized access.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
+            >
+          </div>
+          <!-- Feature 5: Real-Time Sync -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Real-Time Sync"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
+              Real-Time Sync
+            </h3>
+            <p class="text-white dark:text-white">
+              Automatically sync your contacts across all your devices in
+              real-time, ensuring that you always have the latest information at
+              your fingertips.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
+            >
+          </div>
+          <!-- Feature 6: Customizable Tags -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Customizable Tags"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
+              Customizable Tags
+            </h3>
+            <p class="text-white dark:text-white">
+              Organize your contacts with customizable tags to make finding and
+              managing them easier than ever.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
+            >
+          </div>
+          <!-- Feature 7: Analytics Dashboard -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Analytics Dashboard"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
+              Analytics Dashboard
+            </h3>
+            <p class="text-white dark:text-white">
+              Get insights into your contacts' data with an analytics dashboard,
+              helping you understand usage patterns and improve engagement.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
+            >
+          </div>
+          <!-- Feature 8: Data Export -->
+          <div class="bg-gray-800 dark:bg-gray-800 p-6 rounded-lg text-center">
+            <img
+              src="https://res.cloudinary.com/cloudinary/image/upload/v1614084820/sample.jpg"
+              alt="Data Export"
+              class="mb-4 mx-auto"
+            />
+            <h3 class="text-2xl font-bold mb-2 text-white dark:text-white">
+              Data Export
+            </h3>
+            <p class="text-white dark:text-white">
+              Easily export your contact data in various formats, allowing you
+              to back up your contacts or move them to another platform.
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4 inline-block"
+              >Try Now</a
+            >
+          </div>
+        </div>
+      </section>
 
+     <!-- Footer -->
+    <footer class="bg-gray-400 shadow-lg dark:bg-gray-800 py-4 text-center ">
+        <p class="text-md font-bold">&copy; 2024 SCM - All Rights Reserved</p>
+        <p class="inline">Made By Kartik With <h1 class="inline  text-red-500">&hearts;</h1></p>
+    </footer>
 
-
-
-
-     </div>
-
-    </section>
 
     <script></script>
   </body>
