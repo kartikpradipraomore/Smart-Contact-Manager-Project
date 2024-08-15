@@ -1,59 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}">
-<head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}"
+>
+  <head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title t>HomeSCM</title>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
-</head>
-<body>
-    <div id="content" class="bg-slate-100 text-2xl w-1/2 mx-auto ">
-        <h1 th:text="${name}" class="font-bold"></h1>
-        <h2 th:text="${project}"></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Cumque qui quasi nisi vitae dolorum, totam doloremque ipsa eos pariatur deserunt! 
-            Possimus error tempore odit totam voluptatem exercitationem eveniet veritatis voluptatibus.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, exercitationem? 
-            Temporibus eum officia inventore quasi reprehenderit vel et dolore aut, voluptatum 
-            harum ipsum delectus adipisci voluptates, nulla repellat molestiae repudiandae.</p>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+  </head>
+  <body>
+    <div id="content" class="mt-28">
+          <!-- Hero Section -->
+    <header class=" dark:bg-gray-800 mx-auto text-center py-22">
+        <h1 class=" text-2xl  md:text-5xl font-bold mb-4">Welcome to Smart Contact Management</h1>
+        <p class="text-xl mb-6">Manage your contacts effortlessly with cloud storage and Google Authentication</p>
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded text-lg font-semibold">Get Started</a>
+    </header>
 
-            
+    <!-- Features Section -->
+    <section class="container mt-11 mb-20 mx-auto px-4 py-16">
 
-<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"/>
-    </svg>
-    <a href="#">
-        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
-    <a href="#" class="inline-flex font-medium items-center text-blue-600 hover:underline">
-        See our guideline
-        <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-        </svg>
-    </a>
-</div>
-
-
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-gray-400 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto text-blue-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 13.586A2 2 0 104.707 15l5.657-5.657-1.414-1.414L3.293 13.586a2 2 0 001.828.586z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Cloud Storage</h3>
+                <p>Save and access your contacts securely from anywhere.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="bg-gray-400 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto text-green-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-4-4m0 0l-4 4m4-4v12" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Google Authentication</h3>
+                <p>Ensure secure login with Google for hassle-free access.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="bg-gray-400 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto text-red-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 014-4h2a4 4 0 014 4v2m-6 2v4m0 0l-4-4m4 4l4-4" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Easy Import/Export</h3>
+                <p>Quickly import and export contacts with just a few clicks.</p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="bg-gray-400 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto text-yellow-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 9v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9m4 0v2a2 2 0 002 2h4a2 2 0 002-2V9m0-4h.01" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Advanced Search</h3>
+                <p>Find contacts by name, email, or phone with advanced search features.</p>
+            </div>
+            <!-- Feature 5 -->
+            <div class="bg-gray-400 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto text-purple-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h3l-9-9m9 0v3l-3-3M21 21l-6-6M7 7l6-6m6 6l-3-3" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Responsive Design</h3>
+                <p>Access your contacts on any device with a mobile-friendly design.</p>
+            </div>
+            <!-- Feature 6 -->
+            <div class="bg-gray-400 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto text-pink-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 3-3 3m0-6h7m6 0h2a2 2 0 012 2v7a2 2 0 01-2 2h-2m-5 0h-4" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">User-Friendly Interface</h3>
+                <p>Intuitive interface that makes contact management simple.</p>
+            </div>
+        </div>
+    </section>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-   
-</body>
+  </body>
 </html>

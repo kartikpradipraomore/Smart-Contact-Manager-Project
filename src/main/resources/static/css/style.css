@@ -156,6 +156,6 @@
 }
 
 .animate-color-change {
-    animation: colorChange 100s infinite;
+    animation: colorChange 200s infinite;
     
 }
