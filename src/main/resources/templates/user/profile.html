@@ -7,7 +7,6 @@
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
-    
   </head>
   <body>
     <div id="content">
@@ -24,43 +23,56 @@
         > -->
 
         <div
-         
           id="default-carousel"
-          class="relative w-full rounded-xl  animate-color-change h-[700px] "
+          class="relative w-full rounded-xl animate-color-change h-[700px]"
           data-carousel="slide"
         >
           <!-- Carousel wrapper -->
-          <div  data-th-object="${user}" class=" mt-11 gap-10 relative h-full overflow-hidden rounded-lg md:h-[700px]">
+          <div
+            data-th-object="${user}"
+            class="mt-11 gap-10 relative h-full overflow-hidden rounded-lg md:h-[700px]"
+          >
             <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out rounded-lg pt-20 md:mt-20 md:mb-20 md:mr-24  md:ml-24 "  data-carousel-item>
-
-              <div class="flex items-center flex-col">
-
-                <div class="mt-7">
-                  <img class="rounded-full h-32 md:h-52" data-th-src="@{*{profilePic}}" alt="" />
+            <div
+              class="hidden duration-700 ease-in-out rounded-lg pt-20 md:mt-20 md:mb-20 md:mr-24 md:ml-24"
+              data-carousel-item
+            >
+              
+              <div
+                class="bg-gray-200 hover:scale-110 duration-150  hover:translate-x-2 hover:skew-x-3 hover:rotate-[360deg] shadow-lg rounded-lg p-6 w-full max-w-sm md:max-w-lg mx-auto mt-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-green-500 hover:via-yellow-500 hover:to-red-500"
+              >
+                <div class="flex items-center justify-center mb-4">
+                  <img
+                    class="w-24 h-24 rounded-full shadow-md"
+                    data-th-src="@{*{profilePic}}"
+                    alt="User Image"
+                  />
                 </div>
-
-                <div class="mt-5">
-                  <h1 class="text-black font-bold text-3xl"><span data-th-text="*{name}"></span></h1>
+                <div class="text-center">
+                  <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                   <span data-th-text="*{name}"></span>
+                  </h2>
+                  <p class="text-gray-600 mb-1"><span data-th-text="*{email}"></span></p>
+                  <p class="text-gray-600 mb-4">+91 <span data-th-text="*{phoneNumber}"></span></p>
+                  <div
+                    class="bg-blue-100 text-blue-700 py-2 px-4 rounded-lg inline-block shadow-sm"
+                  >
+                    <p class="text-lg font-semibold">Number of Contacts: 24</p>
+                  </div>
                 </div>
-
-                <div class="mt-5">
-                  <h1 data-th-text="*{email}" class="text-gray-700"></h1>
-                </div>
-                
-
               </div>
             </div>
+          </div>
 
-            <!-- Item 2 -->
-            <!-- <div
+          <!-- Item 2 -->
+          <!-- <div
               class="hidden duration-700 ease-in-out bg-red-300 pt-20 md:mt-20 md:mb-20 md:mr-24  md:ml-24"
               data-carousel-item
             ></div> -->
-          </div>
+        </div>
 
-          <!-- Slider indicators -->
-          <!-- <div
+        <!-- Slider indicators -->
+        <!-- <div
             class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
           >
             <button
@@ -139,16 +151,3 @@
     <script></script>
   </body>
 </html>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-     
